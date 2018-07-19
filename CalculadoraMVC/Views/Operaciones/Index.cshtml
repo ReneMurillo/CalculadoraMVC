@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="margin-top:5%;">
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/suma.jpg" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">Suma</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una suma</p>
+                    @Html.ActionLink("Visitar", "Suma", "Operaciones", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/resta.png" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">Resta</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una resta</p>
+                    @Html.ActionLink("Visitar", "Resta", "Operaciones", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/multiplicacion.jpg" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">Multiplicación</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una multiplicación</p>
+                    @Html.ActionLink("Visitar", "Multiplicacion", "Operaciones", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="margin-top:5%;">
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/division.jpeg" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">División</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una división</p>
+                    @Html.ActionLink("Visitar", "Division", "Operaciones", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/potencia.png" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">Potencia</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una potencia</p>
+                    @Html.ActionLink("Visitar", "Potencia", "Operaciones", new { @class="btn btn-primary"})
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;margin-top: 2%; float:left; margin-left: 6%;">
+                <img class="card-img-top" src="~/Content/img/raiz.png" alt="Suma" width="100" height="100">
+                <div class="card-body">
+                    <h5 class="card-title">Raíz cuadrada</h5>
+                    <p class="card-text">Accede a la interfaz para realizar una raíz cuadrada</p>
+                    @Html.ActionLink("Visitar", "Raiz", "Operaciones", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+</div>

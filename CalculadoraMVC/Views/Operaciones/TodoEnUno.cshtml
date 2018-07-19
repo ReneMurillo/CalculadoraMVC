@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "TodoEnUno";
+}
+
+<h2>Todas las operaciones</h2>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form action="TodoEnUno" class="form-horizontal" method="post" id="formulario" name="formulario">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Suma</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Suma" onclick="Mostrar(); OtraOperacion()">
+
+                    <label for="exampleInputEmail1">Resta</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Resta" onclick="Mostrar(); OtraOperacion()">
+
+                    <label for="exampleInputEmail1">Multiplicación</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Multi" onclick="Mostrar(); OtraOperacion()">
+
+                    <label for="exampleInputEmail1">División</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Division" onclick="Mostrar(); OtraOperacion()">
+
+                    <label for="exampleInputEmail1">Potencia</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Potencia" onclick="Mostrar(); Potencia()">
+
+                    <label for="exampleInputEmail1">Raíz</label>
+                    <input type="radio" name="operacion" autocomplete="off" value="Raiz" onclick="Ocultar(); OtraOperacion()">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1" id="lnum1">Número 1</label>
+                    <input type="text" class="form-control" placeholder="Ingrese el número 1" name="num1" autocomplete="off">
+                </div>
+                <div class="form-group" id="raiz">
+                    <label for="exampleInputPassword1" id="lnum2">Número 2</label>
+                    <input type="text" class="form-control" placeholder="Ingrese el número 2" name="num2" autocomplete="off" id="num2">
+                </div>
+                <button type="submit" class="btn btn-primary">Calcular</button>
+                @Html.ActionLink("Cancelar", "Index", "Operaciones", new { @class = "btn btn-danger" })
+            </form>
+            <br />
+            <div class="jumbotron">
+                <h2>@ViewBag.total</h2>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+@section script{
+<script>
+    $("#formulario").validate(
+        {
+            rules: {
+                num1: {
+                    required: true,
+                    digits: true
+                },
+                num2: {
+                    required: true,
+                    digits: true
+                }
+            }
+        }
+    );
+    function Ocultar() {
+            document.getElementById('raiz').style.display = 'none';
+        document.formulario.num2.value = "0";
+        document.querySelector('#lnum1').innerHTML = 'Número';
+    }
+    function Mostrar() {
+        document.getElementById('raiz').style.display = 'block';
+        document.formulario.num2.value = "";
+    }
+    function Potencia() {
+        document.querySelector('#lnum1').innerHTML = 'Base';
+        document.querySelector('#lnum2').innerHTML = 'Potencia';
+    }
+    function OtraOperacion(){
+        document.querySelector('#lnum1').innerHTML = 'Número 1';
+        document.querySelector('#lnum2').innerHTML = 'Número 2';
+    }
+    </script>
+
+}

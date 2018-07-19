@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Raiz";
+}
+
+<h2>Raíz cuadrada</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form action="Raiz" class="form-horizontal" method="post" id="formulario">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Número</label>
+                    <input type="text" class="form-control" placeholder="Ingrese el número del que desea saber la raíz cuadrada" name="num1" autocomplete="off">
+                </div>
+                <button type="submit" class="btn btn-primary">Calcular</button>
+                @Html.ActionLink("Cancelar", "Index", "Operaciones", new { @class = "btn btn-danger" })
+            </form>
+            <br />
+            <div class="jumbotron">
+                <h2>@ViewBag.total</h2>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>
+@section script{
+    <script>
+    $("#formulario").validate(
+        {
+            rules: {
+                num1: {
+                    required: true,
+                    digits: true
+                }
+            }
+        }
+    );
+    </script>
+}
